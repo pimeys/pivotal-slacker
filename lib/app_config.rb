@@ -1,8 +1,10 @@
 require "rubygems"
+require "etc"
 
 class AppConfig
-  FILENAME = ".pt.yaml"
-  
+  FILENAME = "#{Etc.getpwuid.dir}/.pt.yaml"
+  #FILENAME = ".pt.yaml"
+
   def self.load
     require "yaml"
 
